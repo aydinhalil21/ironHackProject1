@@ -7,7 +7,7 @@ class Obstacle2 {
       this.width = width
       this.element = document.createElement('img')
   
-      this.element.src = '../images/enemy2.png'
+      this.element.src = 'images/enemy2.png'
   
       this.element.style.position = 'absolute'
       this.element.style.left = `${this.left}px`
@@ -19,11 +19,28 @@ class Obstacle2 {
     }
   
     move() {
+      this.left += 1
       this.updatePosition()
-      this.element.style.left = `${this.left}px`
+      
     }
   
     updatePosition() {
-      this.left += 1
+      this.element.style.left = `${this.left}px`
     }
+    didCollide(obstacle) {
+      const playerRect = this.element.getBoundingClientRect()
+      const obstacleRect = obstacle.element.getBoundingClientRect()
+  
+      if (
+        playerRect.left < obstacleRect.right &&
+        playerRect.right > obstacleRect.left &&
+        playerRect.top < obstacleRect.bottom &&
+        playerRect.bottom > obstacleRect.top
+      ) {
+        return true
+      } else {
+        return false
+      }
+    } 
+    
   }

@@ -7,7 +7,7 @@ class Obstacle {
       this.width = width
       this.element = document.createElement('img')
   
-      this.element.src = '../images/enemy.png'
+      this.element.src = 'images/enemy.png'
   
       this.element.style.position = 'absolute'
       this.element.style.left = `${this.left}px`
@@ -26,19 +26,5 @@ class Obstacle {
     updatePosition() {
       this.left -= 1
     }
-    didCollide(obstacle) {
-      const obsRect = this.element.getBoundingClientRect()
-      const obstacle2Rect = obstacle2.element.getBoundingClientRect()
-  
-      if (
-        obsRect.left < obstacle2Rect.right &&
-        obsRect.right > obstacle2Rect.left &&
-        obsRect.top < obstacle2Rect.bottom &&
-        obsRect.bottom > obstacle2Rect.top
-      ) {
-        return true
-      } else {
-        return false
-      }
-    }
+   
   }

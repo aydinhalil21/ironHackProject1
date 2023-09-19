@@ -31,6 +31,9 @@ window.addEventListener('load', () => {
     } else if (event.code === 'KeyS' || event.code === 'ArrowDown') {
       game.player.directionY = 1
     }
+    if (event.code === 'Space' ) {
+      game.shoot()
+    } 
    
   })
 
