@@ -3,6 +3,7 @@ class Game {
     this.startScreen = document.getElementById('game-intro')
     this.gameScreen = document.getElementById('game-screen')
     this.gameEndScreen = document.getElementById('game-end')
+    this.gameWonScreen = document.getElementById('game-won')
     this.height = 600
     this.width = 1000
     this.player = new Player(this.gameScreen, 230, 550, 80, 40)
@@ -15,11 +16,13 @@ class Game {
     this.score = 0
     this.lives = 3
     this.gameOver = false
+    this.gameWon = false
   }
 
   start() {
     this.startScreen.style.display = 'none'
     this.gameEndScreen.style.display = 'none'
+    this.gameWonScreen.style.display = 'none'
     this.gameScreen.style.display = 'block'
 
     this.gameScreen.style.height = `${this.height}px`
@@ -51,14 +54,24 @@ class Game {
     document.getElementById('score').innerText = this.score
     document.getElementById('lives').innerText = this.lives
 
-    if (this.lives < 1) {
+    if (this.lives < 1  ) {
       this.gameOver = true
+    }
+    if (this.score >= 10  ) {
+      this.gameWon = true
     }
 
     if (this.gameOver) {
-      this.gameScreen.style.display = 'none'
       this.gameEndScreen.style.display = 'block'
-    } else {
+    this.gameWonScreen.style.display = 'none'
+    this.gameScreen.style.display = 'none'
+    } else if(this.gameWon){
+      this.gameEndScreen.style.display = 'none'
+    this.gameWonScreen.style.display = 'block'
+    this.gameScreen.style.display = 'none'
+
+    }
+    else {
       this.animateId = requestAnimationFrame(() => this.gameLoop())
     }
   }

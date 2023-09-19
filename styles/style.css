@@ -6,6 +6,18 @@ body {
 #game-intro {
   padding: 20px 0px;
 }
+#start-button {
+  position: absolute; /* Position the button relative to the container */
+  top: 80%; /* Position the button vertically in the middle */
+  left: 50%; /* Position the button horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the button perfectly */
+  z-index: 1; /* Set a higher z-index to make the button appear on top of the image */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
 
 #game-container {
   display: flex;
@@ -40,15 +52,30 @@ body {
 #game-end {
   display: none;
 }
+#game-won {
+  display: none;
+}
 
 .game-intro p {
   font-size: 18px;
   font-family: "Verdana";
+  position: absolute; /* Position the button relative to the container */
+  top: 80%; /* Position the button vertically in the middle */
+  left: 50%; /* Position the button horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the button perfectly */
+  z-index: 1; /* Set a higher z-index to make the button appear on top of the image */
+  color: #fff; /* Button text color */
+}
+.image-container {
+  position: relative; /* Make the container a positioning context */
+  display: inline-block; /* Allows the container to fit its content */
 }
 
 .logo-img {
-  width: 350px;
+  max-width: 150%; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Maintain the image's aspect ratio */
 }
+
 
 .arrows-img {
   width: 150px;
