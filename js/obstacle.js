@@ -26,4 +26,19 @@ class Obstacle {
     updatePosition() {
       this.left -= 1
     }
+    didCollide(obstacle) {
+      const obsRect = this.element.getBoundingClientRect()
+      const obstacle2Rect = obstacle2.element.getBoundingClientRect()
+  
+      if (
+        obsRect.left < obstacle2Rect.right &&
+        obsRect.right > obstacle2Rect.left &&
+        obsRect.top < obstacle2Rect.bottom &&
+        obsRect.bottom > obstacle2Rect.top
+      ) {
+        return true
+      } else {
+        return false
+      }
+    }
   }

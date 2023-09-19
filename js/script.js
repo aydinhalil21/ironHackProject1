@@ -31,6 +31,7 @@ window.addEventListener('load', () => {
     } else if (event.code === 'KeyS' || event.code === 'ArrowDown') {
       game.player.directionY = 1
     }
+   
   })
 
   document.addEventListener('keyup', event => {
