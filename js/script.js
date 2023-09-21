@@ -1,6 +1,38 @@
 window.addEventListener('load', () => {
   const startButton = document.getElementById('start-button')
   const restartButton = document.getElementById('restart-button')
+  const restartButtonWon = document.getElementById('restart-buttonWon')
+  const audio = document.getElementById('myAudio');
+  const playButton = document.getElementById('playButton');
+  const pauseButton = document.getElementById('pauseButton');
+  const easyButton = document.getElementById('easy-button')
+    const mediumButton = document.getElementById('medium-button')
+    const hardButton = document.getElementById('hard-button')
+  
+    easyButton.addEventListener('click', () => {
+      
+      game = new Game()
+      game.easy()
+      
+    });
+    mediumButton.addEventListener('click', () => {
+      game = new Game()
+      game.medium()
+    });
+    hardButton.addEventListener('click', () => {
+      game = new Game()
+      game.hard()
+    });  
+  playButton.addEventListener('click', () => {
+    audio.play();
+    audio.style.display = 'none'; });
+
+  
+
+  pauseButton.addEventListener('click', () => {
+    audio.pause();
+    audio.style.display = 'none';
+  });
 
   let game
 
@@ -8,6 +40,11 @@ window.addEventListener('load', () => {
     console.log('start game')
     game = new Game()
     game.start()
+  }
+  function startGame() {
+    console.log('start game')
+    game = new Game()
+    game.restart()
   }
 
   startButton.addEventListener('click', function () {
@@ -18,6 +55,11 @@ window.addEventListener('load', () => {
     game.player.element.remove()
     startGame()
   })
+  restartButtonWon.addEventListener('click', function () {
+    game.player.element.remove()
+    startGame()
+  })
+  
 
   document.addEventListener('keydown', event => {
     console.log('down', event)

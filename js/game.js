@@ -4,6 +4,14 @@ class Game {
     this.gameScreen = document.getElementById('game-screen')
     this.gameEndScreen = document.getElementById('game-end')
     this.gameWonScreen = document.getElementById('game-won')
+    const easyButton = document.getElementById('easy-button')
+    const mediumButton = document.getElementById('medium-button')
+    const hardButton = document.getElementById('hard-button')
+    this.level = 15;
+    
+   
+
+    this.blaster = document.getElementById('myAudioBlaster');
     this.height = 600
     this.width = 1000
     this.player = new Player(this.gameScreen, 230, 550, 80, 40)
@@ -17,6 +25,51 @@ class Game {
     this.lives = 3
     this.gameOver = false
     this.gameWon = false
+  }
+    
+  easy(){
+    this.startScreen.style.display = 'none'
+    this.gameEndScreen.style.display = 'none'
+    this.gameWonScreen.style.display = 'none'
+    this.gameScreen.style.display = 'block'
+
+    this.gameScreen.style.height = `${this.height}px`
+    this.gameScreen.style.width = `${this.width}px`
+    this.level = 25;
+
+    this.gameLoop()
+  }
+  medium(){
+    this.startScreen.style.display = 'none'
+    this.gameEndScreen.style.display = 'none'
+    this.gameWonScreen.style.display = 'none'
+    this.gameScreen.style.display = 'block'
+
+    this.gameScreen.style.height = `${this.height}px`
+    this.gameScreen.style.width = `${this.width}px`
+    this.level = 35;
+
+    this.gameLoop()
+  }
+  hard(){
+    this.startScreen.style.display = 'none'
+    this.gameEndScreen.style.display = 'none'
+    this.gameWonScreen.style.display = 'none'
+    this.gameScreen.style.display = 'block'
+
+    this.gameScreen.style.height = `${this.height}px`
+    this.gameScreen.style.width = `${this.width}px`
+    this.level = 50;
+
+    this.gameLoop()
+  }
+  restart() {
+    this.startScreen.style.display = 'block'
+    this.gameEndScreen.style.display = 'none'
+    this.gameWonScreen.style.display = 'none'
+    this.gameScreen.style.display =  'none'
+
+    
   }
 
   start() {
@@ -34,6 +87,7 @@ class Game {
 
   gameLoop() {
     this.update()
+    
 
     if (this.animateId % 500 === 0) {
       this.obstacles.push(
@@ -57,7 +111,7 @@ class Game {
     if (this.lives < 1  ) {
       this.gameOver = true
     }
-    if (this.score >= 10  ) {
+    if (this.score >= this.level  ) {
       this.gameWon = true
     }
 
@@ -76,6 +130,11 @@ class Game {
     }
   }
   shoot() {
+    function playSound() {
+      let audio = new Audio("/sound/blaster.mp3");
+      audio.play();
+  }
+    playSound();
     const playerRect = this.player.element.getBoundingClientRect()
     this.obstacles2.push(
       new Obstacle2(

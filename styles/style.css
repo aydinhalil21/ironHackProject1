@@ -2,28 +2,108 @@ body {
   padding: 0;
   text-align: center;
 }
+#myAudio {
+  display: none;
+}
 
 #game-intro {
   padding: 20px 0px;
 }
 #start-button {
-  position: absolute; /* Position the button relative to the container */
-  top: 80%; /* Position the button vertically in the middle */
-  left: 50%; /* Position the button horizontally in the middle */
-  transform: translate(-50%, -50%); /* Center the button perfectly */
-  z-index: 1; /* Set a higher z-index to make the button appear on top of the image */
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
-  padding: 10px 20px; /* Button padding */
-  border: none; /* Remove button border */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
+#easy-button {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+#medium-button {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+#hard-button {
+  position: absolute;
+  top: 75%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#playButton {
+  position: absolute;
+  top: 110%;
+  left: 2%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 10px;
+}
+
+#pauseButton {
+  position: absolute;
+  top: 110%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 10px;
+}
+
 
 #game-container {
   display: flex;
   width: 100vw;
   padding: 20px 0px;
   justify-content: center;
+}
+#stats-container{
+  z-index: 1;
+  position: absolute;
+  color: #fff;
+  text-align: left; 
+  left: 20%;
+  
+
+}
+.stats-container p{
+  color: #fff ;
 }
 
 #game-screen {
@@ -54,6 +134,14 @@ body {
 }
 #game-won {
   display: none;
+ 
+}
+.game-won p{
+  z-index: 1; 
+  top: 10%;
+  position: absolute;
+  color: #161414;
+  
 }
 
 .game-intro p {
@@ -71,6 +159,7 @@ body {
   display: inline-block; /* Allows the container to fit its content */
 }
 
+
 .logo-img {
   max-width: 150%; /* Ensure the image doesn't exceed its container's width */
   height: auto; /* Maintain the image's aspect ratio */
@@ -82,12 +171,15 @@ body {
 }
 
 body button {
-  font-size: 30px;
-  background-color: #870007;
-  color: #fff;
-  padding: 20px 40px;
-  border: 0;
-  box-shadow: 0;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  position: absolute; /* Position the button relative to the container */
+  top: 80%; /* Position the button vertically in the middle */
+  left: 50%; /* Position the button horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the button perfectly */
+  z-index: 1; /* Set a higher z-index to make the button appear on top of the image */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  width: 150px;
 }

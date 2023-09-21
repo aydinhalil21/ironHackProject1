@@ -5,25 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <audio id="myAudio" controls autoplay loop style="display: none;">
+      <source src="/sound/main.mp3" type="audio/mpeg">
+      
+    </audio>
+    <audio id="myAudioBlaster" controls style="display: none;">
+      <source src="/sound/blaster.mp3" type="audio/mpeg">
+      
+    </audio>
+
+
     <title>Island Racer</title>
   </head>
   <body>
     <main>
+      
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
         <div class="image-container">
           <img src="./images/logo.png" alt="" class="logo-img" />
+          <button id="easy-button">Easy</button>
+          <button id="medium-button">medium</button>
+          <button id="hard-button">hard</button>
           <button id="start-button">Start Game</button>
+          
+          
+          <p>Use the arrows to control the player space to shoot!</p>
+
         </div>
-        <p>Use the arrows to control the player space to shoot!</p>
-       <!-- <img src="./images/arrows.png" alt="" class="arrows-img" />-->
+        
+       
       </div>
 
       <div id="game-container">
-        <div>
+        <div id="stats-container">
           <h2>Stats</h2>
           <p>Score: <span id="score">0</span></p>
           <p>Lives: <span id="lives">3</span></p>
+          
+          <button id="playButton"><i class="fas fa-volume-up"></i></button>
+          <button id="pauseButton"><i class="fas fa-volume-mute"></i></button>
         </div>
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen"></div>
@@ -31,16 +53,16 @@
 
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
-        <img src="./images/logo.png" alt="" class="logo-img" />
+        <img src="./images/lost.gif" alt="" class="logo-img" />
         <h1>Game Over</h1>
         <br />
         <button id="restart-button">Restart</button>
       </div>
       <div id="game-won">
-        <img src="./images/logo.png" alt="" class="logo-img" />
-        <h1>You won</h1>
+        <img src="./images/won.png" alt="" class="logo-img" />
+        <h1></h1>
         <br />
-        <button id="restart-button">Restart</button>
+        <button id="restart-buttonWon">Restart</button>
       </div>
     </main>
 
