@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
     game = new Game()
     game.start()
   }
-  function startGame() {
+  function restartGame() {
     console.log('start game')
     game = new Game()
     game.restart()
@@ -53,11 +53,11 @@ window.addEventListener('load', () => {
 
   restartButton.addEventListener('click', function () {
     game.player.element.remove()
-    startGame()
+    restartGame()
   })
   restartButtonWon.addEventListener('click', function () {
     game.player.element.remove()
-    startGame()
+    restartGame()
   })
   
 

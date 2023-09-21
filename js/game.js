@@ -93,7 +93,7 @@ class Game {
       this.obstacles.push(
         new Obstacle(
           this.gameScreen,
-          1200, Math.random() * (this.gameScreen.clientHeight - 40) + 50,
+          1200, Math.random() * (this.gameScreen.clientHeight+80 ) + 80,
 
           80,
           40
