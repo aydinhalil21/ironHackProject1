@@ -7,7 +7,7 @@ class Heart {
     this.width = width
     this.element = document.createElement('img')
 
-    this.element.src = '../images/heart.png'
+    this.element.src = './images/heart.png'
 
     this.element.style.position = 'absolute'
     this.element.style.left = `${this.left}px`
