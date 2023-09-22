@@ -2,25 +2,28 @@ window.addEventListener('load', () => {
   const startButton = document.getElementById('start-button')
   const restartButton = document.getElementById('restart-button')
   const restartButtonWon = document.getElementById('restart-buttonWon')
-  const audio = document.getElementById('myAudio');
+  const audio = document.getElementById('myAudioMain');
   const playButton = document.getElementById('playButton');
   const pauseButton = document.getElementById('pauseButton');
   const easyButton = document.getElementById('easy-button')
     const mediumButton = document.getElementById('medium-button')
     const hardButton = document.getElementById('hard-button')
-  
+  audio.play();
     easyButton.addEventListener('click', () => {
       
       game = new Game()
+      audio.play();
       game.easy()
       
     });
     mediumButton.addEventListener('click', () => {
       game = new Game()
+      audio.play();
       game.medium()
     });
     hardButton.addEventListener('click', () => {
       game = new Game()
+      audio.play();
       game.hard()
     });  
   playButton.addEventListener('click', () => {
@@ -48,6 +51,7 @@ window.addEventListener('load', () => {
   }
 
   startButton.addEventListener('click', function () {
+    audio.play();
     startGame()
   })
 

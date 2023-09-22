@@ -8,6 +8,7 @@ class Game {
     const mediumButton = document.getElementById('medium-button')
     const hardButton = document.getElementById('hard-button')
     this.level = 15;
+    this.mainAudio = document.getElementById('myAudioMain');
     
    
 
@@ -88,6 +89,7 @@ class Game {
 
   gameLoop() {
     this.update()
+    
     
 
     if (this.animateId % 500 === 0) {
