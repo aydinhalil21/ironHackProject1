@@ -146,7 +146,7 @@ class Game {
   }
   shoot() {
     function playSound() {
-      let audio = new Audio("/sound/blaster.mp3");
+      let audio = new Audio("./sound/blaster.mp3");
       audio.play();
   }
     playSound();
