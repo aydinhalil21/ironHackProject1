@@ -17,6 +17,7 @@ class Game {
     this.player = new Player(this.gameScreen, 230, 550, 80, 40)
     this.obstacles = []
     this.obstacles2 = []
+    this.heart = []
 
 
 
@@ -103,6 +104,19 @@ class Game {
       
 
     }
+    if (this.score > 0  ) {
+      this.heart.push(
+        new Heart(
+          this.gameScreen,
+          1200, Math.random() * (this.gameScreen.clientHeight+80 ) + 80,
+
+          40,
+          40
+        )
+
+      )
+      
+    }
 
 
     document.getElementById('score').innerText = this.score
@@ -114,6 +128,7 @@ class Game {
     if (this.score >= this.level  ) {
       this.gameWon = true
     }
+    
 
     if (this.gameOver) {
       this.gameEndScreen.style.display = 'block'

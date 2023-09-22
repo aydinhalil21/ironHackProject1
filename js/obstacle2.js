@@ -19,7 +19,7 @@ class Obstacle2 {
     }
   
     move() {
-      this.left += 1
+      this.left += 3
       this.updatePosition()
       
     }

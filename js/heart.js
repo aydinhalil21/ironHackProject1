@@ -1,4 +1,4 @@
-class fire {
+class Heart {
   constructor(gameScreen, left, top, height, width) {
     this.gameScreen = gameScreen
     this.left = left
@@ -7,7 +7,7 @@ class fire {
     this.width = width
     this.element = document.createElement('img')
 
-    this.element.src = '../images/fire.png'
+    this.element.src = '../images/heart.png'
 
     this.element.style.position = 'absolute'
     this.element.style.left = `${this.left}px`
